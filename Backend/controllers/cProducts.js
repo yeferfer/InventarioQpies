@@ -8,12 +8,11 @@ exports.getProducts = (req, res) => {
 
 exports.addProduct = (req, res) => {
   const productosAdd = new Producto({
+    fecha: req.body.fecha,
     title: req.body.title,
-    description: req.body.description,
-    price: req.body.price,
+    color: req.body.color,
+    material: req.body.material,
     url: req.body.url,
-    categoria: req.body.categoria,
-    numeracion: req.body.numeracion,
     n43: req.body.n43,
     n42: req.body.n42,
     n41: req.body.n41,

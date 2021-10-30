@@ -1,62 +1,37 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const VentasForm = ({ handleChange, handleClick, categorias, formValue }) => {
+const VentasForm = ({ handleChange, handleClick, formValue }) => {
   return (
     <Form>
       <Form.Group className="mb-3">
         <Form.Label>Fecha Venta</Form.Label>
         <Form.Control
-          type="text"
+          type="date"
           name="Fecha_Venta"
           onChange={handleChange}
           value={formValue.Fecha_Venta}
         />
       </Form.Group>
-
-      <Form.Group className="mb-3">
-        <Form.Label>Producto</Form.Label>
-        <Form.Control
-          type="text"
-          name="Producto"
-          onChange={handleChange}
-          value={formValue.Producto}
-        />
-      </Form.Group>
-
       <Form.Group className="mb-3">
         <Form.Label>Referencia</Form.Label>
-        <Form.Control
-          type="text"
-          name="Referencia"
+        <Form.Select
+          aria-label="Default select example"
+          name="referencia"
           onChange={handleChange}
-          value={formValue.Referencia}
-        />
+          value={formValue.referencia}
+        >
+          <option>Seleccione una Referencia</option>
+          <option>Por areglar</option>
+          {/* {categorias.map((categoria) => (
+            <option key={categoria._id} value={categoria._id}>
+              {categoria.nombre}
+            </option>
+          ))} */}
+        </Form.Select>
       </Form.Group>
-
       <Form.Group className="mb-3">
-        <Form.Label>Precio</Form.Label>
-        <Form.Control
-          type="number"
-          name="Precio"
-          onChange={handleChange}
-          value={formValue.Precio}
-        />
-      </Form.Group>
-
-      <Form.Group className="mb-3">
-        <Form.Label>Descripción</Form.Label>
-        <Form.Control
-          as="textarea"
-          name="Descripcion"
-          style={{ height: "50px" }}
-          onChange={handleChange}
-          value={formValue.Descripcion}
-        />
-      </Form.Group>
-
-      <Form.Group className="mb-3">
-        <Form.Label>Sucursal</Form.Label>
+        <Form.Label>Color</Form.Label>
         <Form.Control
           type="text"
           name="Sucursal"
@@ -64,7 +39,47 @@ const VentasForm = ({ handleChange, handleClick, categorias, formValue }) => {
           value={formValue.Sucursal}
         />
       </Form.Group>
-
+      <Form.Group className="mb-3">
+        <Form.Label>Material</Form.Label>
+        <Form.Control
+          type="text"
+          name="Sucursal"
+          onChange={handleChange}
+          value={formValue.Sucursal}
+        />
+      </Form.Group>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">
+              <Form.Group className="mb-3">
+                <Form.Label>Numero</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="Sucursal"
+                  onChange={handleChange}
+                  value={formValue.Sucursal}
+                />
+              </Form.Group>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <Form.Group className="mb-3">
+                <Form.Label>Cantidad</Form.Label>
+                <Form.Control
+                  type="number"
+                  name="n43"
+                  onChange={handleChange}
+                  value={formValue.n43}
+                />
+              </Form.Group>
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <Form.Group className="mb-3">
         <Form.Label>Vendedor</Form.Label>
         <Form.Control
@@ -74,35 +89,24 @@ const VentasForm = ({ handleChange, handleClick, categorias, formValue }) => {
           value={formValue.Vendedor}
         />
       </Form.Group>
-
       <Form.Group className="mb-3">
-        <Form.Label>Categoria</Form.Label>
-        <Form.Select
-          aria-label="Default select example"
-          name="Categoria"
+        <Form.Label>Sucursal</Form.Label>
+        <Form.Control
+          type="text"
+          name="Sucursal"
           onChange={handleChange}
-          value={formValue.categoria}
-        >
-          <option>Seleccione una categoria</option>
-          {categorias.map((categoria) => (
-            <option key={categoria._id} value={categoria._id}>
-              {categoria.nombre}
-            </option>
-          ))}
-        </Form.Select>
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Check
-          type="checkbox"
-          id="default-checkbox"
-          label="Confirmada"
-          name="disponible"
-          value={formValue.disponible}
-          onChange={handleChange}
+          value={formValue.Sucursal}
         />
       </Form.Group>
-
+      <Form.Group className="mb-3">
+        <Form.Label>Precio</Form.Label>
+        <Form.Control
+          type="number"
+          name="Precio"
+          onChange={handleChange}
+          value={formValue.Precio}
+        />
+      </Form.Group>
       <Button type="button" variant="danger">
         Cancelar
       </Button>

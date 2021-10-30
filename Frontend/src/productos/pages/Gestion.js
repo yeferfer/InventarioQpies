@@ -32,22 +32,26 @@ const Gestion = ({ productos }) => {
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Precio</th>
+              <th>Referencia</th>
+              <th>Fecha</th>
+              <th>Color</th>
+              <th>Material</th>
               <th>Imagen</th>
-              <th>Categoria</th>
               <th>Numeracion</th>
               <th>Acción</th>
             </tr>
           </thead>
           <tbody>
             {productosGestion.map((producto) => {
+              const d = new Date(producto.fecha);
+              const fech =
+                d.getFullYear() + "/" + d.getMonth() + "/" + d.getDay();
               return (
                 <tr key={producto._id}>
                   <td>{producto.title}</td>
-                  <td>{producto.description}</td>
-                  <td>{producto.price}</td>
+                  <td>{fech}</td>
+                  <td>{producto.color}</td>
+                  <td>{producto.material}</td>
                   <td>
                     <img
                       className="t-img"
@@ -55,7 +59,6 @@ const Gestion = ({ productos }) => {
                       alt={producto.nombre}
                     />
                   </td>
-                  <td>{producto.categoria}</td>
                   <td>
                     <Link to={`/GestionNumeracion/Edit/${producto._id}`}>
                       <Button id={producto._id} className="ms-2">

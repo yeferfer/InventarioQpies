@@ -15,7 +15,6 @@ exports.addVentas = (req, res) => {
     Descripcion: req.body.Descripcion,
     Sucursal: req.body.Sucursal,
     Vendedor: req.body.Vendedor,
-    Categoria: req.body.Categoria,
   });
 
   ventasAdd.save().then((createdVenta) => {

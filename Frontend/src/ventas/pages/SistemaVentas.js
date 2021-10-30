@@ -29,7 +29,7 @@ const SistemaVentas = ({ ventas, setVentas }) => {
   const [newVenta, setNewVenta] = useState({
     Fecha_Venta: "",
     Producto: "",
-    Referencia: 0,
+    Referencia: "",
     Precio: 0,
     Descripcion: "",
     Sucursal: "",

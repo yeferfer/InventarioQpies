@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 var uniqueValidator = require("mongoose-unique-validator");
 
 const producto = mongoose.Schema({
+  fecha: { type: Date },
   title: { type: String, required: true, unique: true },
-  description: { type: String },
-  price: { type: Number, required: true },
-  url: { type: String, required: true },
-  categoria: { type: String, required: true },
+  color: { type: String, required: true },
+  material: { type: String, required: true },
+  url: { type: String },
   n43: { type: Number },
   n42: { type: Number },
   n41: { type: Number },

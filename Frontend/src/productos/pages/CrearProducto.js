@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import api from "../../api";
 import ProductForm from "../components/ProductForm";
+import { useHistory } from "react-router-dom";
 
 const CrearProducto = ({ productos, setProductos }) => {
   const [error, setError] = useState();
   const [success, setSuccess] = useState();
+  const history = useHistory();
   const [newProduct, setNewProduct] = useState({
     title: "",
     description: "",
@@ -50,6 +52,7 @@ const CrearProducto = ({ productos, setProductos }) => {
     } else {
       setSuccess(apiResponse);
       setProductos([...productos, newProduct]);
+      history.push("/Gestion");
     }
   };
 

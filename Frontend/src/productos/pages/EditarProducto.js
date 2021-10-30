@@ -6,11 +6,6 @@ import ProductForm from "../components/ProductForm";
 
 const EditarProducto = ({ productos, setProductos }) => {
   const history = useHistory();
-  const categorias = [
-    { id: 1, nombre: "Deportivo" },
-    { id: 2, nombre: "Colegial" },
-    { id: 4, nombre: "Elegante" },
-  ];
   const [error, setError] = useState();
   const [success, setSuccess] = useState();
   const { productId } = useParams();
@@ -21,7 +16,6 @@ const EditarProducto = ({ productos, setProductos }) => {
     price: 0,
     url: "",
     categoria: "",
-    // numeracion: {},
   });
 
   useEffect(() => {
@@ -60,7 +54,6 @@ const EditarProducto = ({ productos, setProductos }) => {
             <ProductForm
               handleChange={handleChange}
               handleClick={handleClick}
-              categorias={categorias}
               formValue={newProduct}
             />
           </Col>

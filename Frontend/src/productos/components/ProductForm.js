@@ -1,11 +1,21 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { useParams, useHistory } from "react-router-dom";
 
 const ProductForm = ({ handleChange, handleClick, formValue }) => {
   return (
     <Form>
       <Form.Group className="mb-3">
-        <Form.Label>Nombre</Form.Label>
+        <Form.Label>Fecha</Form.Label>
+        <Form.Control
+          type="date"
+          name="fecha"
+          onChange={handleChange}
+          value={formValue.fecha}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label>Referencia</Form.Label>
         <Form.Control
           type="text"
           name="title"
@@ -14,22 +24,21 @@ const ProductForm = ({ handleChange, handleClick, formValue }) => {
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label>Descripción</Form.Label>
+        <Form.Label>Color</Form.Label>
         <Form.Control
-          as="textarea"
-          name="description"
-          style={{ height: "50px" }}
+          type="text"
+          name="color"
           onChange={handleChange}
-          value={formValue.description}
+          value={formValue.color}
         />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label>Precio</Form.Label>
+        <Form.Label>Material</Form.Label>
         <Form.Control
-          type="number"
-          name="price"
+          type="text"
+          name="material"
           onChange={handleChange}
-          value={formValue.price}
+          value={formValue.material}
         />
       </Form.Group>
       <Form.Group className="mb-3">
@@ -40,19 +49,6 @@ const ProductForm = ({ handleChange, handleClick, formValue }) => {
           onChange={handleChange}
           value={formValue.url}
         />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>Categoria</Form.Label>
-        <Form.Select
-          aria-label="Default select example"
-          name="categoria"
-          onChange={handleChange}
-          value={formValue.categoria}
-        >
-          <option>Seleccione una categoria</option>
-          <option>Deportivo</option>
-          <option>Colegial</option>
-        </Form.Select>
       </Form.Group>
       Numeracion
       <table class="table">
